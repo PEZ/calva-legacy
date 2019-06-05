@@ -61,7 +61,7 @@ function onDidOpen(document) {
 }
 
 
-function activate(context) {
+function activate(context: vscode.ExtensionContext) {
     state.cursor.set('analytics', new Analytics(context));
     state.analytics().logPath("/start");
     state.analytics().logEvent("LifeCycle", "Started");
@@ -71,6 +71,14 @@ function activate(context) {
     if (newCalvaExtension) {
         vscode.window.showErrorMessage("The new Calva extension detected. Please uninstall or diable one of the Calva extensions (probably this one.)", ...["Oh, dear. Of course!"]);
         return false;
+    } else {
+        if (!context.workspaceState.get("dontNag")) {
+            const NO_NAG = "Nice! But don't nag me about this";
+            vscode.window.showInformationMessage("This is the Legacy version of Calva. It will be removed from the marketplace soon.\n\nYou should consider installing the new version.", ...[NO_NAG, "Exciting!"])
+                .then(v => {
+                    context.workspaceState.update("dontNag", v == NO_NAG);
+                });
+        }
     }
 
     let chan = state.outputChannel();

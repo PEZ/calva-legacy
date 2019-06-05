@@ -1,9 +1,9 @@
 {
     "name": "clojure4vscode",
     "displayName": "Calva Legacy",
-    "description": "You should probably look for the new Calva.",
+    "description": "This extension will be removed from the Markerplace soon. You should probably install the new Calva instead.",
     "icon": "assets/calva.png",
-    "version": "1.3.68",
+    "version": "1.3.69",
     "publisher": "cospaia",
     "author": {
         "name": "Bettar Than Tomorrow",
