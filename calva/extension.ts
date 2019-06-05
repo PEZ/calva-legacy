@@ -69,7 +69,7 @@ function activate(context) {
     let newCalvaExtension = vscode.extensions.getExtension('betterthantomorrow.calva');
 
     if (newCalvaExtension) {
-        vscode.window.showErrorMessage("The new Calva extension detected. Please uninstall one of the Calva extensions (probably this one.)", ...["Oh, dear. Of course!"]);
+        vscode.window.showErrorMessage("The new Calva extension detected. Please uninstall or diable one of the Calva extensions (probably this one.)", ...["Oh, dear. Of course!"]);
         return false;
     }
 
