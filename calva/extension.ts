@@ -65,7 +65,14 @@ function activate(context) {
     state.cursor.set('analytics', new Analytics(context));
     state.analytics().logPath("/start");
     state.analytics().logEvent("LifeCycle", "Started");
-    
+
+    let newCalvaExtension = vscode.extensions.getExtension('betterthantomorrow.calva');
+
+    if (newCalvaExtension) {
+        vscode.window.showErrorMessage("The new Calva extension detected. Please uninstall one of the Calva extensions (probably this one.)", ...["Oh, dear. Of course!"]);
+        return false;
+    }
+
     let chan = state.outputChannel();
     chan.appendLine("Calva activated.");
     let {

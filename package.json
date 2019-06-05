@@ -3,7 +3,7 @@
     "displayName": "Calva: Clojure & Clojurescript Interactive Programming",
     "description": "Integrated REPL, linting, inline eval and more for VSCode. Powered by Cider & nRepl.",
     "icon": "assets/calva.png",
-    "version": "1.3.66",
+    "version": "1.3.67",
     "publisher": "cospaia",
     "author": {
         "name": "Bettar Than Tomorrow",
@@ -11,7 +11,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/BetterThanTomorrow/calva.git"
+        "url": "https://github.com/PEZ/calva.git"
     },
     "license": "MIT",
     "engines": {
@@ -34,11 +34,6 @@
         "theme": "dark"
     },
     "badges": [
-        {
-            "url": "https://img.shields.io/badge/clojurians--zulip-calva-brightgreen.svg?logo=zulip",
-            "href": "https://clojurians.zulipchat.com/#narrow/stream/calva",
-            "description": "Let's talk in the #calva stream of Clojurians Zulip"
-        },
         {
             "url": "https://img.shields.io/badge/clojurians-calva--dev-blue.svg?logo=slack",
             "href": "https://clojurians.slack.com/messages/calva-dev/",
