@@ -1,9 +1,9 @@
 {
     "name": "clojure4vscode",
-    "displayName": "Calva: Clojure & Clojurescript Interactive Programming",
-    "description": "Integrated REPL, linting, inline eval and more for VSCode. Powered by Cider & nRepl.",
+    "displayName": "Calva Legacy",
+    "description": "You should probably look for the new Calva.",
     "icon": "assets/calva.png",
-    "version": "1.3.67",
+    "version": "1.3.68",
     "publisher": "cospaia",
     "author": {
         "name": "Bettar Than Tomorrow",

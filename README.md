@@ -1,6 +1,9 @@
-# Calva: Clojure & ClojureScript support for VS Code
+# Calva Legacy
 
-[Integrated REPL, linting, inline eval, test runner, and more](https://marketplace.visualstudio.com/items?itemName=cospaia.clojure4vscode). Powered by Cider & nRepl.
+This extension is an old version of [Calva: Clojure & ClojureScript support for VS Code](https://github.com/BetterThanTomorrow/calva.git). Please see that and install that instead.
+
+The rest of this text is for if you are still insisting on using this old extension. 😀
+
 
 About the name: *Calva is short for Calvados, a liquid gifted to humanity from God. It is made from Cider.*
 
