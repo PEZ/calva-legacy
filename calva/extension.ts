@@ -74,7 +74,7 @@ function activate(context: vscode.ExtensionContext) {
     } else {
         if (!context.workspaceState.get("dontNag")) {
             const NO_NAG = "Nice! But don't nag me about this";
-            vscode.window.showInformationMessage("This is the Legacy version of Calva. It will be removed from the marketplace soon.\n\nYou should consider installing the new version.", ...[NO_NAG, "Exciting!"])
+            vscode.window.showInformationMessage("This is the Legacy version of Calva. It will be removed from the marketplace very soon. Install the new Calva extension instead.\n\nIf there is something with the new version that makes it not work for you, please update this issue on Github: https://github.com/BetterThanTomorrow/calva/issues/267", ...["Got it!"])
                 .then(v => {
                     context.workspaceState.update("dontNag", v == NO_NAG);
                 });
@@ -91,40 +91,6 @@ function activate(context: vscode.ExtensionContext) {
 
     status.update();
 
-    // COMMANDS
-    /*
-    context.subscriptions.push(vscode.commands.registerCommand('calva.openReplWindow', async function () {
-		const panel = vscode.window.createWebviewPanel("replInteractor", "REPL Interactor", vscode.ViewColumn.Active, { retainContextWhenHidden: true, enableScripts: true, localResourceRoots: [vscode.Uri.file(path.join(context.extensionPath, 'html'))] })
-		let html = readFileSync(path.join(context.extensionPath, "html/index.html")).toString()
-		html = html.replace("{{baseUri}}", getUrl())
-		html = html.replace("{{script}}", getUrl("main.js"))
-		html = html.replace("{{logo}}", getUrl("/clojure-logo.svg"))
-        panel.webview.html = html;
-
-        let session = await nClient.createSession();
-
-        let res = session.eval("*ns*");
-        await res.value;
-        let ns = res.ns;
-
-        panel.webview.onDidReceiveMessage(async function (msg) {
-            if(msg.type == "init") {
-                panel.webview.postMessage({ type: "init", value: "", ns: ns });
-            }
-
-            if(msg.type == "read-line") {
-                let res = session.eval(msg.line, {
-                            stderr: m => panel.webview.postMessage({type: "stderr", value: m}),
-                            stdout: m => panel.webview.postMessage({type: "stdout", value: m})})
-                try {
-                    panel.webview.postMessage({type: "repl-response", value: await res.value, ns: res.ns});
-                } catch(e) {
-                    panel.webview.postMessage({type: "repl-error", ex: e});
-                }
-            }
-        })
-	}));
-    */
     context.subscriptions.push(vscode.commands.registerCommand('calva.connect', connector.connect));
     context.subscriptions.push(vscode.commands.registerCommand('calva.reconnect', connector.reconnect));
     context.subscriptions.push(vscode.commands.registerCommand('calva.toggleCLJCSession', connector.toggleCLJCSession));

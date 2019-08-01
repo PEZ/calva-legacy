@@ -3,7 +3,7 @@
     "displayName": "Calva Legacy: Clojure and ClojureScript",
     "description": "This Clojure extension will soon be removed. You should probably install the new Calva instead.",
     "icon": "assets/calva.png",
-    "version": "1.3.70",
+    "version": "1.3.71",
     "publisher": "cospaia",
     "author": {
         "name": "Bettar Than Tomorrow",
